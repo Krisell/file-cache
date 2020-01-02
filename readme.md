@@ -1,6 +1,9 @@
 # File based cache for Node.js
 This package provides a simple filesystem based caching layer for Node.js-applications.
 
+## Installation
+`npm i @krisell/file-cache`
+
 ## Usage
 
 ```js
@@ -17,14 +20,17 @@ cache.remember(key, ttl, () => {
 
   // ttl is given in seconds
 })
+```
 
-// Example
+## Example
+
+```js
 cache.remember('tts-token', 30, () => {
   return Promise.resolve('result-of-heavy-db-query-or-api-call')
 }).then(data => console.log(data))
 ```
 
-## Example use cases
+## Use cases
 API-calls that require a call to issue a token that is valid for 10 minutes. Use this cache to only perform this request at most every 9 minutes.
 
 ## Firebase Functions
