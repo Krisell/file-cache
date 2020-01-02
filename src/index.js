@@ -32,4 +32,4 @@ class FileCache {
   }
 }
 
-export default FileCache
+module.exports = FileCache
