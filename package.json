@@ -1,6 +1,6 @@
 {
   "name": "@krisell/file-cache",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "File based cache for fast access between invocations.",
   "main": "lib/index.js",
   "scripts": {
