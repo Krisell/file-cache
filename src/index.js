@@ -20,12 +20,13 @@ class FileCache {
           }
         }
 
-        let data = cb()
-        fs.writeFile(`${this.path}/file-cache-${key}`, JSON.stringify({
-          data,
-          expiration: +new Date + ttl * 1000,
-        }), () => {
-          resolve(data)
+        cb().then(data => {
+          fs.writeFile(`${this.path}/file-cache-${key}`, JSON.stringify({
+            data,
+            expiration: +new Date + ttl * 1000,
+          }), () => {
+            resolve(data)
+          })
         })
       })
     })

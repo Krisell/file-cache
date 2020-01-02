@@ -9,15 +9,18 @@ import FileCache from '@krisell/file-cache'
 const cache = new FileCache('/tmp')
 
 cache.remember(key, ttl, () => {
-  // Any statements you like.
-  // The returned value is kept in cache and this callback will not be executed again until the cache has expired.
+  // Do whatever you want, and return a promise which resolves to the data you like to cache.
+  // The data is kept in cache and this callback will not be executed again until the cache has expired.
+
+  // If your data can be retreived synchronously, you still need to return a promise and
+  // can do this using return Promise.resolve(data)
 
   // ttl is given in seconds
 })
 
 // Example
 cache.remember('tts-token', 30, () => {
-  return 'result-of-heavy-db-query-or-api-call'
+  return Promise.resolve('result-of-heavy-db-query-or-api-call')
 }).then(data => console.log(data))
 ```
 
