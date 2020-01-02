@@ -1,0 +1,11 @@
+{
+  "name": "@krisell/file-cache",
+  "version": "1.0.0",
+  "description": "File based cache for fast access between invocations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martin Krisell (martin.krisell@gmail.com)",
+  "license": "MIT"
+}
