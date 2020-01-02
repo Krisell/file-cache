@@ -26,3 +26,6 @@ cache.remember('tts-token', 30, () => {
 
 ## Example use cases
 API-calls that require a call to issue a token that is valid for 10 minutes. Use this cache to only perform this request at most every 9 minutes.
+
+## Firebase Functions
+Even though Firebase Functions are stateless, you have access to a /tmp directory for temporary files, and these are usually persisted between requests assuming the same instance is used (not for parallell requests). I use this for storing API access keys which are never needed (they can be fetched) but improves performance if they happen to exists. For data requiring reliable persistance, use another solution.
